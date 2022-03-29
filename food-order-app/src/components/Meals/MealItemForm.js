@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import classes from "./MealItemForm.module.css";
 import Input from "../UI/Input";
-import { ADD_TO_CART, ADJUST_QTY } from "../../models/Shopping/shopping-types";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../models/Shopping/shopping-actions";
 
