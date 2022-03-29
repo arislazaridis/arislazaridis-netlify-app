@@ -1,0 +1,130 @@
+body {
+  margin: 0;
+  padding: 16px;
+  background-image: url(./images/topography.svg),
+    linear-gradient(110deg, #f93d66, #6d47d9);
+  background-size: 340px, auto;
+  margin: 50px;
+  background-attachment: fixed;
+}
+
+.maxWidth {
+  max-width: 1500px;
+}
+
+.nav {
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+.nav a {
+  box-sizing: border-box;
+  background-color: #ffc600;
+  text-decoration: none;
+  color: black;
+  padding: 8px 24px;
+  margin-right: 8px;
+  width: calc((100% - 32px) / 5);
+  text-align: center;
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.nav a:last-of-type {
+  margin-right: 0;
+}
+
+.menuBtn {
+  display: none;
+  background-color: #ffc600;
+  padding: 10px 20px;
+  border: none;
+}
+
+.content1 {
+  width: 100%;
+  display: flex;
+  margin: 24px auto 0 auto;
+  /* gap: 20px; */
+  flex-wrap: wrap;
+}
+
+.imgBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  padding: 200px 40px;
+  box-sizing: border-box;
+  background-image: url(https://jolly-kalam-23776e.netlify.app/restaurantwebsite/images/taco.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.coloredBox {
+  background-color: #ffc600;
+  padding: 12px;
+  width: fit-content;
+}
+
+.boxes {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  box-sizing: border-box;
+  width: 30%;
+  gap: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid black;
+  background-color: #ffc600;
+  height: 50%;
+  font-size: 32px;
+}
+
+@media only screen and (max-width: 700px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    box-sizing: border-box;
+    flex-direction: column;
+    z-index: 10;
+    padding: 16px 0px;
+  }
+
+  .nav a {
+    margin-right: 0;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .nav a:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .imgBox {
+    width: 100%;
+  }
+
+  .boxes {
+    width: 100%;
+    padding-left: 0;
+    margin-top: 20px;
+    flex-direction: row;
+  }
+
+  .box {
+    width: 50%;
+    height: unset;
+    padding: 8px;
+  }
+}

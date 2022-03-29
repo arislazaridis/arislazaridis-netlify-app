@@ -1,0 +1,27 @@
+{
+  "name": "lazaridis-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:twitter": "cd twitter-card && npm install && npm run build && cd ..",
+    "build:ums": "cd ums && npm install && npm run build && cd ..",
+    "build:expenses-app": "cd expenses-app && npm install && npm run build && cd ..",
+    "build:food-order-app": "cd food-order-app && npm install && npm run build && cd ..",
+    "build": "npm run build:twitter && npm run build:ums && npm run build:expenses-app && npm run build:food-order-app  && node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arislazaridis/lazaridis-external-coaching.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arislazaridis/lazaridis-external-coaching/issues"
+  },
+  "homepage": "https://github.com/arislazaridis/lazaridis-external-coaching#readme",
+  "dependencies": {
+    "fs-extra": "^10.0.0"
+  }
+}
