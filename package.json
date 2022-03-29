@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arislazaridis/lazaridis-external-coaching.git"
+    "url": "git+https://github.com/arislazaridis/arislazaridis-netlify-app.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/arislazaridis/lazaridis-external-coaching/issues"
+    "url": "https://github.com/arislazaridis/arislazaridis-netlify-app/issues"
   },
-  "homepage": "https://github.com/arislazaridis/lazaridis-external-coaching#readme",
+  "homepage": "https://github.com/arislazaridis/arislazaridis-netlify-app#readme",
   "dependencies": {
     "fs-extra": "^10.0.0"
   }
