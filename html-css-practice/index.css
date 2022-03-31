@@ -150,14 +150,39 @@ h5 {
   color: white;
 }
 
-@media only screen and (max-width: 980px) {
+@media only screen and (max-width: 1000px) {
   .projects {
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* width: 100%;
+    height: 100%; */
   }
 
   .list {
     display: flex;
     flex-direction: column;
+    width: 100%;
+  }
+
+  .projectJs {
+    width: 400px;
+    font-size: 25px;
+  }
+
+  .jsImg {
+    width: 100%;
+  }
+
+  .projectCss {
+    width: 400px;
+    font-size: 25px;
+    height: 100%;
+    padding-bottom: 25px;
+  }
+
+  .cssImg {
     width: 100%;
   }
 }
