@@ -1,18 +1,36 @@
-import React from "react";
-import classes from "./../Meals/MealsItem.module.css";
+import React, { useState, useContext } from "react";
 import { useSelector } from "react-redux";
+import MealItem from "./../Meals/MealItem";
+import Payment from "../Layout/Payment";
 
 function Cart(props) {
   const cart = useSelector((state) => state.shop.cart);
-  console.log(cart);
+
+  const cartPrices = cart.map((el) => el.price * el.qty);
+
+  const productPrices = cartPrices.reduce((partialSum, a) => partialSum + a, 0);
+
   return (
-    <li className={classes.meal}>
+    <>
       <div>
-        <h3>{props.name}</h3>
-        <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>{props.price}</div>
+        <div>
+          {cart.map((meal) => (
+            <div>
+              <MealItem
+                key={meal._id}
+                id={meal._id}
+                name={meal.name}
+                description={meal.description}
+                price={meal.price}
+                image={meal.image}
+                qty={meal.qty}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </li>
+      <Payment productPrice={Math.round(productPrices)} />
+    </>
   );
 }
 

@@ -1,54 +1,35 @@
 import * as actionTypes from "./shopping-types";
+import { PAGES } from "../../config/config";
+import { createSlice } from "@reduxjs/toolkit";
+import { useNavigate } from "react-router-dom";
 
 const INITIAL_STATE = {
-  products: [
-    {
-      id: "m1",
-      name: "Sushi",
-      description: "Finest fish and veggies",
-      price: 22.99,
-      qty: 0,
-    },
-    {
-      id: "m2",
-      name: "Schnitzel",
-      description: "A german specialty!",
-      price: 16.5,
-      qty: 0,
-    },
-    {
-      id: "m3",
-      name: "Barbecue Burger",
-      description: "American, raw, meaty",
-      price: 12.99,
-      qty: 0,
-    },
-    {
-      id: "m4",
-      name: "Green Bowl",
-      description: "Healthy...and green...",
-      price: 18.99,
-      qty: 0,
-    },
-  ], // {id,title,descr,price,img}
+  products: [], // {id,title,descr,price,img,qty}
   cart: [], // {id,title,descr,price,img,qty}
   currentItem: null,
+  page: PAGES.HomePage,
 };
 
 const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case actionTypes.FETCH_PRODUCTS_REQUEST:
+      return {
+        ...state,
+        products: action.payload,
+      };
     case actionTypes.ADD_TO_CART:
-      const item = state.products.find((prod) => prod.id === action.payload.id);
-      const inCart = state.cart.find((item) =>
-        item.id === action.payload.id ? true : false
+      const item = state.products.find(
+        (prod) => prod._id === action.payload.id
       );
-      console.log(state.cart);
-      // check if item is in cart already
+      const inCart = state.cart.find((item) =>
+        item._id === action.payload.id ? true : false
+      );
+
       return {
         ...state,
         cart: inCart
           ? state.cart.map((item) =>
-              item.id === action.payload.id
+              item._id === action.payload.id
                 ? {
                     ...item,
                     qty: Number(action.payload.qty),
@@ -58,10 +39,27 @@ const shopReducer = (state = INITIAL_STATE, action) => {
           : [...state.cart, { ...item, qty: Number(action.payload.qty) }],
       };
 
+    case actionTypes.CLEAR_CART:
+      return {
+        ...state,
+        cart: [],
+      };
+    case actionTypes.GO_TO_PAGE:
+      return {
+        ...state,
+        page: action.payload,
+      };
+
+    case actionTypes.TOTAL_CART_COUNT:
+      return {
+        ...state,
+        cartCount: action.payload,
+      };
+
     case actionTypes.REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.cart.filter((item) => item.id !== action.payload.id),
+        cart: state.cart.filter((item) => item._id !== action.payload.id),
       };
     case actionTypes.ADJUST_QTY:
       return {
