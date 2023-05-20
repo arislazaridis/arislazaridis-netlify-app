@@ -5,7 +5,6 @@ import "./Register.css";
 import Button from "@mui/material/Button";
 import { Grid, Paper, Avatar, Typography, TextField } from "@mui/material";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import { useDispatch } from "react-redux";
 import Dialog from "@mui/material/Dialog";
 
 import { API_URL } from "./../../config/config";

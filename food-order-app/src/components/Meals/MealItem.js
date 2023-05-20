@@ -12,7 +12,7 @@ function MealItem(props) {
           src={props.image}
           width="150"
           height="100"
-          alt="Image Description"
+          alt="Meal product"
         ></img>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
