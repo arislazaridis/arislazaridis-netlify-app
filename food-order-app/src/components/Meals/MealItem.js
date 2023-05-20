@@ -1,6 +1,5 @@
 import classes from "./MealsItem.module.css";
 import MealItemForm from "./MealItemForm";
-import { addToCart } from "../../models/Shopping/shopping-actions";
 
 function MealItem(props) {
   //function to add item
@@ -9,7 +8,12 @@ function MealItem(props) {
   return (
     <li className={classes.meal}>
       <div>
-        <img src={props.image} width="150" height="100"></img>
+        <img
+          src={props.image}
+          width="150"
+          height="100"
+          alt="Image Description"
+        ></img>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
         <div className={classes.price}>{props.price}</div>

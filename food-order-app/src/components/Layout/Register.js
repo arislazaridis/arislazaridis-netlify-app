@@ -10,7 +10,7 @@ import Dialog from "@mui/material/Dialog";
 
 import { API_URL } from "./../../config/config";
 import Popup from "./Popup";
-import { setSignUpData, setUsersData } from "../../models/sign-forms/actions";
+import { setUsersData } from "../../models/sign-forms/actions";
 
 //Initial State
 const initialErrorStatus = {
@@ -34,9 +34,7 @@ const headerStyle = { margin: 0 };
 const avatarStyle = { backgroundColor: "#1bbd7e" };
 const marginTop = { marginTop: 24 };
 
-const Register = (props) => {
-  const dispatch = useDispatch();
-
+const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
